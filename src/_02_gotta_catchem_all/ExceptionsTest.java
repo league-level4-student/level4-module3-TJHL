@@ -35,9 +35,10 @@ class ExceptionsTest {
 		
 		
 		try {
-			ExceptionMethods.divide(5.5, 0);
+			ExceptionMethods.divide(5.5, 0.0);
+			fail("stupid");
 		}catch (IllegalArgumentException e) {
-		
+			ExceptionMethods.divide(6.0, 3.0);
 		}
 	}
 	
@@ -48,7 +49,12 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		try {
+			ExceptionMethods.reverseString("");
+			fail("bad");
+		}catch (IllegalStateException e){
+			ExceptionMethods.reverseString("hello")	;	
+		}
 	}
 	
 	
